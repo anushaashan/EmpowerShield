@@ -313,6 +313,23 @@
   fetchIncidents();
   setInterval(fetchIncidents, 5000);
 </script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
+  const firebaseConfig = {
+    apiKey: "AIzaSyC8r1pTXqqcabjvrnjtU34W34Seggrad4I",
+    authDomain: "empowershield-db.firebaseapp.com",
+    projectId: "empowershield-db",
+    storageBucket: "empowershield-db.firebasestorage.app",
+    messagingSenderId: "167351214516",
+    appId: "1:167351214516:web:c1ccf24631be83e09f92e1"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  window.db = getFirestore(app);
+  window.addDoc = addDoc;
+  window.collection = collection;
+</script>
 </body>
 </html>
